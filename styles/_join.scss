@@ -1,0 +1,139 @@
+.join-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("/assets/join-background.png");
+}
+
+.join {
+  position: relative;
+  padding-top: 16px;
+  @include container();
+  background-repeat: no-repeat;
+  background-position: center 153px;
+  background-size: 968px 947px;
+  background-image: url("/assets/join-section-background.png");
+
+  &-title {
+    max-width: 1294px;
+    color: #ffffff;
+    @include font(60px, 105%, 700);
+    text-align: center;
+    margin: 0 auto;
+
+    .join-btn {
+      margin: 32px auto 0 auto;
+    }
+  }
+
+  &-subtitle {
+    color: #ffffff;
+    @include font(18px, 105%, 800);
+    text-transform: uppercase;
+  }
+
+  &-text {
+    color: #90a2af;
+    font-size: 14px;
+    @include font(14px, 150%, 400);
+    margin: 8px 0 28px 0;
+  }
+}
+
+.join-section {
+  padding: 89px 0 127px 0;
+  @include flex_container(189px, flex-start, column);
+
+  &-video {
+    position: relative;
+    border-radius: 20px;
+    width: 270px;
+    height: 152px;
+    @include flex_container(normal, center, row, center);
+
+    .preview {
+      border-radius: 20px;
+      width: 100%;
+    }
+
+    .play {
+      width: 80px;
+      position: absolute;
+      cursor: pointer;
+    }
+
+    iframe {
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
+
+  &-content {
+    max-width: 337px;
+    font-weight: 700;
+    line-height: 150%;
+
+    &.mobile {
+      display: none;
+      max-width: 100%;
+      background-color: #000000;
+    }
+  }
+}
+
+@media (max-width: $L) {
+  .join {
+    padding: 0 20px 0 20px;
+  }
+}
+
+@media (max-width: $M) {
+  .join-section {
+    padding: 24px 0 390px 0;
+
+    &-content {
+      display: none;
+
+      &.mobile {
+        display: block;
+        padding: 20px 20px 60px 20px;
+        text-align: center;
+
+        iframe {
+          width: 100%;
+          aspect-ratio: 16 / 9;
+        }
+      }
+    }
+
+    &-video {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .join {
+    background-size: contain;
+    background-position: center 296px;
+
+    &-title {
+      font-size: 46px;
+
+      .join-btn {
+        margin: 28px auto 0 auto;
+      }
+    }
+  }
+}
+
+@media (max-width: $S) {
+  .join {
+    background-position: center 292px;
+    background-size: contain;
+    background-image: url("/assets/join-section-background-m.webp");
+
+    &-title {
+      @include font(28px, 120%, 600);
+    }
+  }
+}

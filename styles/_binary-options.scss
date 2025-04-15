@@ -1,0 +1,45 @@
+.binary-options {
+  padding-bottom: 120px;
+  @include container();
+  @include flex_container(normal, flex-start, column);
+
+  &-bottom {
+    .title {
+      @include font(44px, 120%, 600);
+    }
+
+    .text {
+      font-size: 18px;
+      max-width: 670px;
+      margin: 20px 0 40px 0;
+      color: #8f8f8f;
+    }
+
+    @include flex_container(normal, flex-start, column, center);
+    text-align: center;
+  }
+}
+
+@media (max-width: $M) {
+  .binary-options {
+    padding-bottom: 80px;
+
+    &-bottom {
+      padding: 0 20px;
+    }
+  }
+}
+
+@media (max-width: $S) {
+  .binary-options {
+    &-bottom {
+      .title {
+        font-size: 32px;
+      }
+
+      .text {
+        font-size: 14px;
+      }
+    }
+  }
+}

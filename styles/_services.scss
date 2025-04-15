@@ -1,0 +1,126 @@
+.services {
+  @include container();
+  margin-top: 329px;
+  padding: 80px 0 120px 0;
+
+  .subtitle {
+    margin: 0 auto 24px auto;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  &-content {
+    padding-top: 60px;
+
+    .join-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &-controls {
+    @include flex_container(12px);
+    @include font(14px, 150%, 700);
+    overflow-x: auto;
+    color: #ffffff;
+
+    &-item {
+      width: 100%;
+      padding: 20px 35px;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      min-width: 240px;
+      background-color: #131313;
+
+      &.active {
+        color: #000000;
+        background-color: #ffffff;
+      }
+    }
+  }
+
+  &-list {
+    margin: 32px 0;
+    overflow-x: auto;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+
+    &-item {
+      min-width: 580px;
+      min-height: 470px;
+      @include font(28px, 135%, 700);
+      overflow: hidden;
+      @include flex_container(normal, flex-start, column);
+
+      &-content {
+        height: 100%;
+
+        iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      &-title {
+        padding: 32px 30px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: $L) {
+  .services {
+    margin-top: 0;
+    padding: 60px 20px;
+
+    &-list {
+      margin: 32px 0;
+      overflow-x: auto;
+      color: #ffffff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+
+      &-item {
+        min-width: 335px;
+        min-height: 270px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: $M) {
+  .services {
+    .subtitle {
+      margin-bottom: 16px;
+    }
+
+    &-controls {
+      font-weight: 400;
+    }
+
+    &-content {
+      padding-top: 40px;
+    }
+  }
+}
+
+@media (max-width: $S) {
+  .services {
+    &-list {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}

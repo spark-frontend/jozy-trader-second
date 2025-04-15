@@ -1,0 +1,151 @@
+.download {
+  color: #fff;
+  @include container();
+  @include flex_container(30px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/assets/download-background.png");
+
+  &-left {
+    width: 50%;
+    margin-bottom: 20px;
+    @include font(44px, 120%, 600);
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &-right {
+    width: 50%;
+
+    .subtitle {
+      margin-bottom: 16px;
+    }
+
+    &-text {
+      margin-bottom: 36px;
+      @include font(18px, 150%);
+    }
+  }
+
+  .faq-right {
+    .item {
+      border-radius: 16px;
+      margin-bottom: 16px;
+      border: 1px solid #2b2b2b;
+      background-color: #131313;
+    }
+
+    .item .toggle {
+      border-radius: 50%;
+      background-color: #0466fb;
+      background-size: 12px 12px;
+    }
+
+    .item.expanded .toggle {
+      border: 1px solid #2b2b2b;
+      background-color: transparent;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+  }
+}
+
+@media (max-width: $L) {
+  .download {
+    padding: 0 20px;
+
+    .faq-right {
+      .item .toggle {
+        background-size: 12px 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: $L) {
+  .download {
+    &-left {
+      width: 50%;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    &-text {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: $S) {
+  .download {
+    flex-direction: column;
+
+    &-left {
+      text-align: center;
+      width: 100%;
+    }
+
+    &-right {
+      width: 100%;
+    }
+  }
+}
+
+.feedbacks {
+  color: #fff;
+  padding: 80px 0 200px 0;
+  @include container();
+
+  &-top {
+    margin-bottom: 40px;
+    @include flex_container(normal, space-between, row, center);
+  }
+
+  .trade-controls {
+    position: static;
+  }
+
+  .reviews {
+    padding: 0;
+  }
+}
+
+@media (max-width: $L) {
+  .feedbacks {
+    padding: 80px 20px 140px 20px;
+
+    &-top {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.platforms {
+  color: #fff;
+  text-align: center;
+  @include container();
+
+  .subtitle {
+    margin: 0 auto 24px auto;
+  }
+
+  .text {
+    font-size: 18px;
+    color: #8f8f8f;
+    margin-top: 20px;
+  }
+
+  .trade-controls {
+    position: static;
+    justify-content: center;
+  }
+
+  .reviews {
+    padding-bottom: 40px;
+  }
+}

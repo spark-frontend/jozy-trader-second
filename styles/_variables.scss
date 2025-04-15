@@ -1,0 +1,27 @@
+$L: 1200px;
+$M: 992px;
+$S: 768px;
+
+@mixin flex_container(
+  $gap: normal,
+  $content: space-between,
+  $direction: row,
+  $align: normal
+) {
+  display: flex;
+  gap: $gap;
+  align-items: $align;
+  justify-content: $content;
+  flex-direction: $direction;
+}
+
+@mixin container() {
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+@mixin font($font-size, $line-height, $font-weight: 500) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}

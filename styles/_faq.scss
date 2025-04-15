@@ -1,0 +1,123 @@
+.faq {
+  padding: 120px 0;
+  @include container();
+  @include flex_container(40px, space-between, row, flex-start);
+
+  &-left {
+    max-width: 420px;
+
+    .text {
+      @include font(16px, 24px);
+    }
+
+    .title {
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      margin-bottom: 8px;
+      @include flex_container(10px);
+    }
+  }
+
+  &-right {
+    width: 100%;
+    @include flex_container(8px, flex-start, column);
+
+    .item {
+      border-bottom: 1px solid #212121;
+      &-top {
+        color: #fff;
+        padding: 16px 20px;
+        @include flex_container(normal);
+        @include font(20px, 150%, 700);
+
+        .toggle {
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+          background-image: url("/assets/faq-toggle.svg");
+          background-position: center;
+          background-size: 22px 22px;
+          background-repeat: no-repeat;
+          transition: transform 0.5s ease-out;
+        }
+      }
+
+      &-bottom {
+        max-height: 0;
+        padding: 0 20px;
+        overflow: hidden;
+        color: #8f8f8f;
+        transition: max-height 0.5s ease-out;
+        @include font(16px, 24px);
+
+        p {
+          margin: 4px 0 16px 0;
+        }
+      }
+
+      &.expanded {
+        border-radius: 16px;
+
+        .toggle {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $L) {
+  .faq {
+    padding: 100px 40px;
+  }
+}
+
+@media (max-width: $M) {
+  .faq {
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+
+    &-left {
+      max-width: auto;
+
+      .subtitle {
+        margin: 0 auto 8px auto;
+      }
+
+      .text {
+        text-align: center;
+      }
+
+      .title {
+        text-align: center;
+        margin-bottom: 8px;
+      }
+    }
+
+    &-right {
+      width: 100%;
+
+      .item {
+        &-top {
+          @include font(16px, 135%, 700);
+
+          .toggle {
+            width: 22px;
+            height: 22px;
+          }
+        }
+
+        &-bottom {
+          @include font(14px, 150%);
+
+          p {
+            margin: 12px 0 16px 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+.footer {
+  color: #90a2af;
+  @include container();
+  @include font(16px, 105%, 700);
+  @include flex_container(24px, flex-start, column);
+
+  &-logo {
+    width: 195px;
+    height: 58px;
+    background-repeat: no-repeat;
+    background-image: url("/assets/logo.svg");
+  }
+
+  &-container {
+    background-color: #000;
+  }
+
+  &-top {
+    @include flex_container(normal, space-between);
+  }
+
+  &-bottom {
+    line-height: 150%;
+    border-top: 1px solid #90a2af;
+    padding: 16px 0 20px 0;
+  }
+
+  &-list {
+    padding: 20px 0;
+    @include flex_container(40px);
+
+    li {
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: $L) {
+  .footer {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: $S) {
+  .footer {
+    padding: 0 20px;
+
+    &-top {
+      gap: 32px;
+      flex-direction: column;
+    }
+
+    &-bottom {
+      font-weight: 500;
+    }
+
+    &-list {
+      gap: 20px;
+      text-align: center;
+      padding-bottom: 0;
+      flex-direction: column;
+    }
+
+    &-logo {
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.about-promo {
+  padding: 120px 0;
+  background-color: #fbfbfb;
+}
+
+.about {
+  @include container();
+
+  .subtitle {
+    margin: 0 auto;
+    color: #0466fb;
+    margin-bottom: 24px;
+    background-color: #e3ebf6;
+  }
+
+  .title {
+    text-align: center;
+    color: #000;
+  }
+
+  .text {
+    text-align: center;
+    color: #8f8f8f;
+    margin: 24px 0 60px 0;
+  }
+
+  &-list {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    &-item {
+      width: 100%;
+      height: 270px;
+      padding: 20px;
+      border: 1px solid #e8e8e8;
+      border-radius: 12px;
+      @include font(20px, 150%, 700);
+      @include flex_container(normal, space-between, column);
+
+      &-top {
+        color: #0466fb;
+        @include flex_container(normal, space-between, row, flex-start);
+      }
+
+      &-text {
+        margin-top: 4px;
+        color: #8f8f8f;
+        @include font(12px, 150%);
+      }
+    }
+  }
+}

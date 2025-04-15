@@ -1,0 +1,63 @@
+.promo {
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  padding: 32px 0 32px 40px;
+  @include container();
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: #000000;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("/assets/promo-background.png");
+  @include flex_container(normal, space-between, row);
+
+  &-title {
+    @include font(28px, 135%, 700);
+  }
+
+  &-text {
+    margin-top: 10px;
+    @include font(16px, 150%);
+    max-width: 848px;
+  }
+
+  &-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: $L) {
+  .about-promo {
+    padding: 60px 20px;
+  }
+
+  .promo {
+    display: block;
+    padding: 20px 20px 0 20px;
+
+    &-img {
+      display: block;
+      position: static;
+      margin: 0 0 0 auto;
+    }
+  }
+}
+
+@media (max-width: $M) {
+  .about {
+    &-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: $S) {
+  .about {
+    &-list {
+      grid-template-columns: 1fr;
+    }
+  }
+}

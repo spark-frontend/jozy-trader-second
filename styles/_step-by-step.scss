@@ -1,0 +1,219 @@
+.step-by-step {
+  padding: 120px 0;
+  color: #fff;
+  @include container();
+
+  .title {
+    text-align: center;
+    margin-bottom: 120px;
+  }
+
+  .subtitle {
+    margin: 0 auto 24px auto;
+  }
+
+  &-content {
+    @include flex_container(20px);
+
+    &-title {
+      @include font(36px, 120%, 700);
+    }
+
+    &-text {
+      color: #8f8f8f;
+      @include font(18px, 150%);
+      margin: 12px 0 24px 0;
+    }
+  }
+
+  &-img {
+    max-height: 434px;
+  }
+}
+
+@media (max-width: $L) {
+  .step-by-step {
+    padding: 60px 20px 40px 20px;
+
+    &-img {
+      max-height: 290px;
+    }
+  }
+}
+
+@media (max-width: $M) {
+  .step-by-step {
+    .title {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .text {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: $S) {
+  .step-by-step {
+    &-content {
+      flex-direction: column;
+    }
+
+    &-img {
+      width: 100%;
+      max-height: none;
+    }
+  }
+}
+
+.deposit {
+  color: #ffffff;
+  @include container();
+  @include flex_container(97px);
+
+  &-left {
+    width: 50%;
+
+    &-title {
+      margin-bottom: 12px;
+      @include font(36px, 120%, 700);
+    }
+
+    &-text {
+      color: #8f8f8f;
+      @include font(18px, 150%);
+    }
+  }
+
+  &-right {
+    width: 50%;
+  }
+}
+
+@media (max-width: $L) {
+  .deposit {
+    padding: 0 20px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: $M) {
+  .deposit {
+    &-left {
+      &-title {
+        margin-bottom: 12px;
+        font-size: 32px;
+      }
+
+      &-text {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: $S) {
+  .deposit {
+    flex-direction: column;
+
+    &-left {
+      width: 100%;
+      order: 1;
+      text-align: center;
+    }
+
+    &-right {
+      order: 2;
+      width: 100%;
+    }
+  }
+}
+
+.trade {
+  color: #fff;
+  padding-top: 120px;
+  @include container();
+  position: relative;
+  @include flex_container(110px);
+
+  &-left {
+    &-title {
+      margin-bottom: 12px;
+      @include font(36px, 120%, 700);
+    }
+
+    &-text {
+      color: #8f8f8f;
+      @include font(18px, 150%);
+    }
+  }
+
+  &-btn {
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: #212121;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &-controls {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    @include flex_container(20px);
+
+    &-left {
+      background-image: url("/assets/arrow-left.svg");
+    }
+
+    &-right {
+      background-image: url("/assets/arrow-right.svg");
+    }
+  }
+}
+
+@media (max-width: $L) {
+  .trade {
+    gap: 24px;
+    padding: 40px 20px;
+
+    &-right {
+      width: 40%;
+    }
+
+    &-controls {
+      padding-left: 20px;
+    }
+  }
+}
+
+@media (max-width: $M) {
+  .trade {
+    &-left {
+      &-title {
+        font-size: 32px;
+      }
+
+      &-text {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: $S) {
+  .trade {
+    flex-direction: column;
+
+    &-left {
+      text-align: center;
+    }
+
+    &-right {
+      width: 100%;
+    }
+  }
+}

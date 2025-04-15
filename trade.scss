@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./styles/style";
+@import "./styles/header";
+@import "./styles/binary-options";
+@import "./styles/footer";
+
+.breadcrumbs {
+  @include font(16px, 150%);
+  padding: 100px 0 80px 0;
+}
+
+.header {
+  padding-top: 35px;
+  @include container();
+
+  &-top .join-btn {
+    margin-right: 20px;
+  }
+
+  &-nav {
+    top: 91px;
+  }
+}
+
+.about {
+  color: #fff;
+  @include container();
+
+  &-wrapper {
+    @include flex_container(30px);
+  }
+
+  .text {
+    margin: 12px 0 32px 0;
+  }
+
+  &-left {
+    min-width: 56%;
+  }
+
+  &-right {
+    border-radius: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("/assets/promo-background.png");
+
+    &-top {
+      padding: 32px 32px 0 32px;
+    }
+  }
+
+  .promo {
+    &-title {
+      @include font(28px, 135%, 700);
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      @include font(16px, 150%);
+    }
+
+    &-img {
+      display: block;
+      margin: 0 0 0 auto;
+    }
+  }
+}
+
+.explore {
+  padding: 80px 0 60px 0;
+  @include container();
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.deposit {
+  color: #fff;
+  @include container();
+  @include flex_container(30px);
+
+  &-left {
+    @include font(44px, 120%, 600);
+  }
+
+  &-right {
+    max-width: 40%;
+    @include font(16px, 150%, 500);
+  }
+}
+
+@media (max-width: $L) {
+  .breadcrumbs {
+    padding: 40px 0 40px 0;
+  }
+
+  .about {
+    padding: 0 20px;
+  }
+
+  .deposit {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: $M) {
+  .explore {
+    padding: 32px 0;
+    @include container();
+  }
+
+  .about {
+    text-align: center;
+
+    &-left {
+      .join-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    &-wrapper {
+      flex-direction: column;
+    }
+  }
+
+  .deposit {
+    &-left {
+      @include font(32px, 120%, 600);
+    }
+
+    &-right {
+      max-width: 50%;
+      @include font(14px, 150%, 400);
+    }
+  }
+}
+
+@media (max-width: $S) {
+  .about {
+    .promo {
+      &-title {
+        @include font(20px, 150%, 700);
+        margin-bottom: 10px;
+      }
+
+      &-text {
+        @include font(14px, 150%, 400);
+      }
+    }
+
+    &-right {
+      &-top {
+        padding: 24px 24px 0 24px;
+      }
+    }
+  }
+
+  .deposit {
+    text-align: center;
+    flex-direction: column;
+    gap: 8px;
+
+    &-right {
+      max-width: none;
+    }
+  }
+}
