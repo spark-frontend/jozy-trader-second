@@ -2,7 +2,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url("/assets/join-background.png");
+  background-image: url("../assets/join-background.png");
 }
 
 .join {
@@ -12,7 +12,7 @@
   background-repeat: no-repeat;
   background-position: center 153px;
   background-size: 968px 947px;
-  background-image: url("/assets/join-section-background.png");
+  background-image: url("../assets/join-section-background.png");
 
   &-title {
     max-width: 1294px;
@@ -130,7 +130,7 @@
   .join {
     background-position: center 292px;
     background-size: contain;
-    background-image: url("/assets/join-section-background-m.webp");
+    background-image: url("../assets/join-section-background-m.webp");
 
     &-title {
       @include font(28px, 120%, 600);

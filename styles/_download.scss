@@ -4,7 +4,7 @@
   @include flex_container(30px);
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("/assets/download-background.png");
+  background-image: url("../assets/download-background.png");
 
   &-left {
     width: 50%;

@@ -9,7 +9,7 @@
   background-color: #000000;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/assets/promo-background.png");
+  background-image: url("../assets/promo-background.png");
   @include flex_container(normal, space-between, row);
 
   &-title {
