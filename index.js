@@ -19,6 +19,8 @@ const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => addIframe(entry, observer));
 });
 
+const switcher = document.getElementById("switcher");
+
 const steps = { count: 0 };
 const feedback = { count: 0 };
 const platform = { count: 0 };
@@ -117,3 +119,19 @@ joinVideos.forEach((item) =>
     item.appendChild(iframe);
   })
 );
+
+document.addEventListener("DOMContentLoaded", () => {
+  switcher.checked = window.location.pathname.includes("hi");
+});
+
+switcher.addEventListener("change", async function () {
+  const language = this.checked ? "hi" : "en";
+
+  updateUrl(language);
+});
+
+function updateUrl(language) {
+  const newUrl = language === "hi" ? "/hi" : "/";
+
+  window.location.href = newUrl;
+}
